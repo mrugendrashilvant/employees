@@ -23,8 +23,12 @@ class EmployeeDetailsController < ApplicationController
   def create
     @employee_detail = EmployeeDetail.new(employee_detail_params)
 
+    
     respond_to do |format|
       if @employee_detail.save
+        
+        AlertAdminMailer.alert_admin(@employee_detail).deliver
+
         format.html { redirect_to @employee_detail, notice: "Employee detail was successfully created." }
         format.json { render :show, status: :created, location: @employee_detail }
       else

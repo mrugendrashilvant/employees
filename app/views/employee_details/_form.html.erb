@@ -1,0 +1,42 @@
+<%= form_with(model: employee_detail, local: true) do |form| %>
+  <% if employee_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(employee_detail.errors.count, "error") %> prohibited this employee_detail from being saved:</h2>
+
+      <ul>
+      <% employee_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "First Name:" %>
+    <%= form.text_field :fName %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Last Name:" %>
+    <%= form.text_field :lName %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Email ID:" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Role:" %>
+    <%= form.text_field :role %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Years of Experience:" %>
+    <%= form.number_field :experience %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Add Employee" %>
+  </div>
+<% end %>

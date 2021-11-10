@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_10_061341) do
+ActiveRecord::Schema.define(version: 2021_11_10_101018) do
 
   create_table "employee_details", force: :cascade do |t|
     t.string "fName"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_11_10_061341) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
